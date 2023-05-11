@@ -1,9 +1,11 @@
+import React from "react";
 import "./App.css";
+import Login from "./components/Login";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello and welcome to Spotify Clone 🚀</h1>
+      <Login />
     </div>
   );
 }
