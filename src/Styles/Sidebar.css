@@ -10,3 +10,12 @@
   color: white;
   background-color: #040404;
 }
+
+.sidebar__logo {
+  margin-right: auto;
+  height: 70px;
+  padding: 10px;
+
+  /* to preserve the aspect ratio */
+  /* object-fit: contain; */
+}
