@@ -7,8 +7,8 @@ export const initialState = {
   playing: false,
   item: null,
   // REMOVE AFTER FINISHED DEVELOPING
-  token:
-    "BQDKvfSO27HOG7gyqNM2Llv-xIeMilDYs-heJ3SLuSOtEWo77Zx5oN55jVvbQBvbuCZyTpkZZF0FmlnyLmrNdTa-wSbi_muATibm3tC1dg3JDiNAOpcicZ61R34KiCSG0ynkoIIIyCIoGgtHkJH1HUuxKHpO4u0ysa9xk9D00-4SkEwOumIo5xMSlq37MPw",
+  // token:
+  //   "BQDKvfSO27HOG7gyqNM2Llv-xIeMilDYs-heJ3SLuSOtEWo77Zx5oN55jVvbQBvbuCZyTpkZZF0FmlnyLmrNdTa-wSbi_muATibm3tC1dg3JDiNAOpcicZ61R34KiCSG0ynkoIIIyCIoGgtHkJH1HUuxKHpO4u0ysa9xk9D00-4SkEwOumIo5xMSlq37MPw",
 };
 
 //state is how the datalayer currently looks like

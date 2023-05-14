@@ -2,8 +2,12 @@ import React from "react";
 import "../Styles/Header.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { Avatar } from "@mui/material";
+import { useStateValue } from "../DataLayer";
 
 function Header() {
+  const [{ user }, dispatch] = useStateValue();
+  console.log(user);
+
   return (
     <div className="header">
       <div className="header__left">
@@ -12,8 +16,8 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <Avatar src="" alt="chai sutta" />
-        <h4>Hits harder than chai sutta</h4>
+        <Avatar src={user?.images[0]?.url} alt="chai sutta" />
+        <h4>{user?.display_name}</h4>
       </div>
     </div>
   );
