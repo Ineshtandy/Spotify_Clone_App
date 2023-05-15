@@ -2,6 +2,10 @@
   /* use 80% of space available */
   flex: 0.8;
 
+  width: 100%;
+  /* this did the trick of covering exceeding song list */
+  overflow-y: overlay;
+
   padding: 30px;
   height: 100vh;
   color: white;
@@ -31,4 +35,30 @@
 
 .body__infoText > p {
   font-size: 14px;
+}
+
+.body__songs {
+  align-items: center;
+  z-index: 1;
+  margin: 20px -30px;
+}
+
+.body__icons > .MuiSvgIcon-root {
+  margin-right: 20px;
+}
+
+.body__shuffle {
+  font-size: 80px !important;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.body__shuffle:hover {
+  transition: 100ms transform ease-in;
+  transform: scale(1.08);
+}
+
+.body__icons {
+  display: flex;
+  align-items: center;
 }
