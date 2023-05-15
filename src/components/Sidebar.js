@@ -8,7 +8,7 @@ import { useStateValue } from "../DataLayer";
 
 function Sidebar() {
   const [{ playlists }, dispatch] = useStateValue();
-  console.log(playlists);
+  //console.log(playlists);
 
   return (
     <div className="sidebar">

@@ -2,10 +2,14 @@ import React from "react";
 import "../Styles/Body.css";
 import Header from "./Header";
 import { useStateValue } from "../DataLayer";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SongRow from "./SongRow";
 
 function Body(spotify) {
   const [{ discover_weekly }, dispatch] = useStateValue();
-  console.log(discover_weekly);
+  //console.log(discover_weekly);
 
   return (
     <div className="body">
@@ -18,6 +22,18 @@ function Body(spotify) {
           <h2>{discover_weekly?.name}</h2>
           <p>{discover_weekly?.description}</p>
         </div>
+      </div>
+
+      <div className="body__songs">
+        <div className="body__icons">
+          <PlayCircleFilledIcon className="body__shuffle" />
+          <FavoriteIcon fontSize="large" />
+          <MoreHorizIcon />
+        </div>
+
+        {discover_weekly?.tracks.items.map((item) => (
+          <SongRow trackInfo={item.track} />
+        ))}
       </div>
     </div>
   );

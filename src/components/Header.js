@@ -6,7 +6,7 @@ import { useStateValue } from "../DataLayer";
 
 function Header() {
   const [{ user }, dispatch] = useStateValue();
-  console.log(user);
+  //console.log(user);
 
   return (
     <div className="header">
