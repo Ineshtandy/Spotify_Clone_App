@@ -31,9 +31,11 @@ function Body(spotify) {
           <MoreHorizIcon />
         </div>
 
-        {discover_weekly?.tracks.items.map((item) => (
-          <SongRow trackInfo={item.track} />
-        ))}
+        <div className="body__background">
+          {discover_weekly?.tracks.items.map((item) => (
+            <SongRow trackInfo={item.track} />
+          ))}
+        </div>
       </div>
     </div>
   );
