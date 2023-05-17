@@ -2,10 +2,17 @@ import React from "react";
 import "../Styles/SongRow.css";
 
 function SongRow(trackInfo) {
-  //console.log("inside songrow");
-  console.log(trackInfo);
+  const playSong = (trackName) => {
+    alert(`Now Playing ${trackName}`);
+  };
+
   return (
-    <div className="songRow">
+    <div
+      className="songRow"
+      onClick={() => {
+        playSong(trackInfo.trackInfo.name);
+      }}
+    >
       <img
         className="songRow__album"
         src={trackInfo.trackInfo.album.images[0].url}

@@ -10,15 +10,24 @@ import PauseCircleOutlineIcon from "@mui/icons-material/PauseCircleOutline";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 import Slider from "@mui/material/Slider";
 import Grid from "@mui/material/Grid";
+import { useStateValue } from "../DataLayer";
 
 function Footer() {
+  const [{ discover_weekly }, dispatch] = useStateValue();
+
+  let displayName = discover_weekly?.tracks.items[0].track.name;
+  let displayImg = discover_weekly?.tracks.items[0].track.album.images[0].url;
+  let displayArtist = discover_weekly?.tracks.items[0].track.artists
+    .map((artist) => artist.name)
+    .join(", ");
+
   return (
     <div className="footer">
       <div className="footer__left">
-        <img className="footer__albumLogo" src="" alt="your mom" />
+        <img className="footer__albumLogo" src={displayImg} alt="" />
         <div className="footer__songInfo">
-          <h4>yeah</h4>
-          <p>eminem</p>
+          <h4>{displayName}</h4>
+          <p>{displayArtist}</p>
         </div>
       </div>
 

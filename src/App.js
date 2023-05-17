@@ -10,7 +10,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   //const [token, setToken] = useState(null);
-  const [{ user, token }, dispatch] = useStateValue();
+  const [{ token }, dispatch] = useStateValue();
 
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -46,11 +46,15 @@ function App() {
           discover_weekly: response,
         })
       );
-    }
-  }, []);
 
-  // console.log("person", user);
-  // console.log("toke -> ", token);
+      spotify.getMyTopArtists().then((artists) => {
+        dispatch({
+          type: "SET_TOP_ARTISTS",
+          top_artists: artists,
+        });
+      });
+    }
+  }, [token, dispatch]);
 
   return (
     <div className="App">
